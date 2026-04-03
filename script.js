@@ -80,4 +80,20 @@ const strPerson = JSON.stringify(person)
 
 localStorage.setItem('person', strPerson)
 
-const parsePerson = JSON.parse(localStorage.getItem('person'))
+const parsePerson = JSON.parse(localStorage.getItem('person1'))
+
+const fruits = ["tomate", "pomme", "banane", "orange"]
+
+const ul = document.querySelector('ul')
+
+fruits.forEach((fruit) => {
+    ul.insertAdjacentHTML("afterbegin", `<li> ${fruit} </li>`)
+})
+
+const buttons = document.querySelectorAll('button')
+
+buttons.forEach((el) => {
+    el.addEventListener('click', () =>{
+        
+    })
+})
