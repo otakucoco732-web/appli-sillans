@@ -92,8 +92,13 @@ fruits.forEach((fruit) => {
 
 const buttons = document.querySelectorAll('button')
 
-buttons.forEach((el) => {
-    el.addEventListener('click', () =>{
-        
+buttons.forEach((button) => {
+    // el.addEventListener('click', () =>{
+    //     console.log(this.DataTransferItem.id)
+    // })
+    button.addEventListener('click', (el) => {
+        const id = el.target.dataset.id
+        document.querySelector("body > section:nth-child(3) > p")
+        .textContent = `Tu as cliqué sur ${id}`
     })
 })
