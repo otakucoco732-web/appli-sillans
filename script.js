@@ -23,15 +23,61 @@
 //         console.log("Tant pis")
 // }
 
+// Ternaire : if else condensé
+// qui a pour objectif d'attibuer une valeur à une variable
+// variable = (condition) ? valeur si vrai : valeur si faux
+const age = 12
+const information = age >= 18 ? "Majeur" : "Mineur"
+
 // // Boucles
 // for(let i = 0; i<100; i+2){
 //     console.log("Nombres pairs :" +i)
 // }
 
-// // Fonctions
+// const h1 = document.querySelector('h1')
+// h1.innerHTML = "HELLLOOOOOOO"
+// h1.textContent = "Miaou"
 
-// // Classes
+const article = `
+        <article>
+            <h2>Titre</h2>
+            <div>
+                <div>
+                    <ul>
+                        <li>A</li>
+                        <li>B</li>
+                        <li>C</li>
+                        <li>D</li>
+                        <li>E</li>
+                    </ul>
+                </div>
+            </div>
+        </article>`
 
-const h1 = document.querySelector('h1')
-h1.innerHTML = "HELLLOOOOOOO"
-h1.textContent = "Miaou"
+document.querySelector("body > section:nth-child(2)").insertAdjacentHTML("afterbegin", article)
+
+const h1 = document.querySelector("h1")
+let count = 0
+const title = h1.textContent
+h1.addEventListener('click',()=>{
+    count++
+    h1.textContent = `${title} ${count}`
+})
+
+// localStorage.setItem("clé", valeur au format STRING)
+localStorage.setItem('prenom', "Coralie")
+// localStorage.getItem("clé")
+const prenom = localStorage.getItem('prenom')
+console.log(prenom)
+
+const person = {
+    prenom :"Coralie",
+    nom: "Meyer",
+    age: 19
+}
+
+const strPerson = JSON.stringify(person)
+
+localStorage.setItem('person', strPerson)
+
+const parsePerson = JSON.parse(localStorage.getItem('person'))
